@@ -1,24 +1,47 @@
-// SIDEBAR
+const fecha = new Date();
 
-const toggleBtn = document.getElementById("toggleBtn");
+document.getElementById("fecha").innerHTML = fecha.toLocaleString(
+    "es-PE",
+    {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit"
+    }
+);
 
+const menuBtn = document.getElementById("menuBtn");
 const sidebar = document.getElementById("sidebar");
 
-const logoSidebar = document.getElementById("logoSidebar");
+menuBtn.addEventListener("click", () => {
 
-toggleBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("show");
 
-    sidebar.classList.toggle("hide");
+});
 
-    // CAMBIAR LOGO
+document.addEventListener("click", (e) => {
 
-    if(sidebar.classList.contains("hide")){
+    const isMobile = window.innerWidth < 992;
 
-        logoSidebar.src = "assets/escudo.png";
+    if (
+        isMobile &&
+        !sidebar.contains(e.target) &&
+        !menuBtn.contains(e.target) &&
+        sidebar.classList.contains("show")
+    ) {
 
-    }else{
+        sidebar.classList.remove("show");
 
-        logoSidebar.src = "assets/logo.png";
+    }
+
+});
+
+window.addEventListener("resize", () => {
+
+    if (window.innerWidth >= 992) {
+
+        sidebar.classList.remove("show");
 
     }
 

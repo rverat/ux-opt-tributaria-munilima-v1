@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Dashboard — Agencia Virtual</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/dashboard.css">
@@ -15,220 +13,247 @@
 
 <body>
 
-<div class="wrapper">
+    <div class="wrapper">
 
-    <!-- SIDEBAR -->
-    <aside id="sidebar">
+        <!-- SIDEBAR -->
+        <nav id="sidebar">
 
-        <div class="sidebar-top">
+            <div class="logo-container">
 
-            <img src="assets/logo.png"
-                 class="logo"
-                 id="logoSidebar">
-
-        </div>
-
-        <ul class="menu">
-
-            <li class="active">
-                <a href="dashboard.html">
-                    <i class="bi bi-house"></i>
-                    <span>Inicio</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="generacion.html">
-                    <i class="bi bi-pencil"></i>
-                    <span>Realizar trámites y solicitudes</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="consulta.html">
-                    <i class="bi bi-search"></i>
-                    <span>Consultar Estado de Solicitudes</span>
-                </a>
-            </li>
-
-            <li >
-                <a href="guia.html">
-                    <i class="bi bi-question-circle"></i>
-                    <span>Guía de usuario</span>
-                </a>
-            </li>
-
-            <li class="logout">
-
-                <a href="#"
-                   data-bs-toggle="modal"
-                   data-bs-target="#logoutModal">
-
-                    <i class="bi bi-box-arrow-right"></i>
-
-                    <span>Cerrar sesión</span>
-
-                </a>
-
-            </li>
-
-        </ul>
-
-    </aside>
-
-    <!-- MAIN -->
-    <main class="main-content">
-
-        <!-- TOPBAR -->
-        <header class="topbar">
-
-            <button id="toggleBtn" class="menu-toggle">
-                <i class="bi bi-list"></i>
-            </button>
-
-            <div class="topbar-right">
-
-                <div class="top-item">
-                    <i class="bi bi-person"></i>
-                    ROL: CIUDADANO
-                </div>
-
-                <div class="top-item">
-                    <i class="bi bi-calendar-event"></i>
-                    11/06/2024
-                </div>
-
-                <div class="top-item">
-                    <i class="bi bi-clock"></i>
-                    02:57 p.m.
-                </div>
-
-                <div class="top-item">
-                    <i class="bi bi-person-circle"></i>
-                    VGONZALES
-                </div>
+                <img src="assets/logo.png" class="logo">
 
             </div>
 
-        </header>
+            <ul class="nav flex-column">
 
-        <!-- CONTENIDO -->
-        <div class="container-fluid contenido">
+                <li class="nav-item">
 
-            <h1 class="titulo">
-                Generación de declaración jurada o liquidación de tributo — HR/PU
-            </h1>
+                    <a class="nav-link active" href="dashboard.html">
 
-            <p class="subtitulo">
-                Antes de iniciar una nueva solicitud, tenga en cuenta lo siguiente:
-            </p>
+                        <i class="bi bi-house"></i>
+                        <span>Inicio</span>
 
-            <!-- CARDS -->
-            <div class="row g-4 mt-3">
+                    </a>
 
-                <div class="col-lg-4">
+                </li>
 
-                    <div class="card info-card">
+                <li class="nav-item">
 
-                        <div class="numero">1</div>
+                    <a class="nav-link" href="generacion.html">
 
-                        <p>
-                            Las solicitudes registradas son a título personal
-                            del deudor tributario.
-                        </p>
+                        <i class="bi bi-pencil"></i>
+                        <span>Realizar trámites y solicitudes</span>
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="busqueda.html">
+
+                        <i class="bi bi-search"></i>
+                        <span>Búsqueda de Declaraciones</span>
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="resumen.html">
+
+                        <i class="bi bi-file-earmark-medical"></i>
+                        <span>Resumen de Trámite</span>
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="imprimir.html">
+
+                        <i class="bi bi-printer"></i>
+                        <span>Imprimir Declaración</span>
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="#">
+
+                        <i class="bi bi-search"></i>
+                        <span>Consultar Estado de Solicitudes</span>
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="#">
+
+                        <i class="bi bi-question-circle"></i>
+                        <span>Guía de usuario</span>
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item mt-auto">
+
+                    <a class="nav-link text-danger"
+                       href="#"
+                       data-bs-toggle="modal"
+                       data-bs-target="#logoutModal">
+
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span>Cerrar sesión</span>
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <!-- MAIN -->
+        <div class="main">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div class="d-flex align-items-center gap-3">
+
+                    <button class="btn text-white d-lg-none" id="menuBtn">
+
+                        <i class="bi bi-list fs-4"></i>
+
+                    </button>
+
+                    <div class="topbar-title">
+                        Agencia Virtual Tributaria
+                    </div>
+
+                </div>
+
+                <div class="user-info text-uppercase">
+
+                    ROL: CIUDADANO |
+                    <span id="fecha">20/05/2026</span> |
+                    GONZALES
+
+                </div>
+
+            </header>
+
+            <!-- CONTENT -->
+            <div class="container py-5">
+
+                <h2 class="titulo mb-3">
+
+                    Generación de declaración jurada o liquidación de tributo — HR/PU
+
+                </h2>
+
+                <p class="subtitulo text-muted">
+
+                    Antes de iniciar una nueva solicitud, tenga en cuenta lo siguiente:
+
+                </p>
+
+                <!-- CARDS -->
+                <div class="row g-4 mt-4">
+
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                        <div class="card info-card border-0">
+
+                            <div class="number">
+                                1
+                            </div>
+
+                            <p class="mb-0">
+
+                                Las solicitudes registradas son a título personal del deudor tributario.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                        <div class="card info-card border-0">
+
+                            <div class="number">
+                                2
+                            </div>
+
+                            <p class="mb-0">
+
+                                Podrás consultar declaraciones y liquidaciones tributarias vigentes.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                        <div class="card info-card border-0">
+
+                            <div class="number">
+                                3
+                            </div>
+
+                            <p class="mb-0">
+
+                                Recuerda mantener actualizado tu correo electrónico para las notificaciones.
+
+                            </p>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-                <div class="col-lg-4">
+                <!-- ALERT -->
+                <div class="alert alert-info mt-5 border-0 shadow-sm d-flex align-items-center gap-3">
 
-                    <div class="card info-card">
+                    <i class="bi bi-info-circle-fill fs-4"></i>
 
-                        <div class="numero">2</div>
+                    <div>
 
-                        <p>
-                            Podrás consultar declaraciones y liquidaciones
-                            tributarias vigentes.
-                        </p>
+                        Consulta el Marco Normativo en el que rige el Procedimiento de Registro e Impresión de declaración jurada.
 
                     </div>
 
                 </div>
 
-                <div class="col-lg-4">
+                <!-- ACTIONS -->
+                <div class="d-flex justify-content-end gap-3 mt-5">
 
-                    <div class="card info-card">
+                    <button class="btn btn-outline-secondary px-4">
 
-                        <div class="numero">3</div>
+                        Atrás
 
-                        <p>
-                            Recuerda mantener actualizado tu correo electrónico
-                            para las notificaciones.
-                        </p>
+                    </button>
 
-                    </div>
+                    <a href="busqueda.html" class="btn btn-primary px-4 fw-bold">
+
+                        Continuar
+
+                    </a>
 
                 </div>
-
-            </div>
-
-            <!-- ALERTA -->
-            <div class="alerta-info">
-
-                <i class="bi bi-info-circle-fill"></i>
-
-                <div>
-                    Consulta el Marco Normativo en el que rige el Procedimiento
-                    de Registro e Impresión de declaración jurada.
-                </div>
-
-            </div>
-
-            <!-- BOTÓN -->
-            <div class="acciones">
-
-                <a href="generacion.html" class="btn btn-continuar">
-                    Continuar
-                </a>
-
-            </div>
-
-        </div>
-
-    </main>
-
-</div>
-
-<!-- MODAL -->
-<div class="modal fade" id="logoutModal">
-
-    <div class="modal-dialog modal-dialog-centered">
-
-        <div class="modal-content modal-custom">
-
-            <div class="modal-header border-0">
-                <h5>Cerrar sesión</h5>
-
-                <button class="btn-close"
-                        data-bs-dismiss="modal"></button>
-            </div>
-
-            <div class="modal-body">
-                ¿Está seguro que desea finalizar su sesión actual?
-            </div>
-
-            <div class="modal-footer border-0">
-
-                <button class="btn btn-light"
-                        data-bs-dismiss="modal">
-                    Cancelar
-                </button>
-
-                <a href="home.html"
-                   class="btn btn-danger">
-                    Salir
-                </a>
 
             </div>
 
@@ -236,51 +261,48 @@
 
     </div>
 
-</div>
+    <!-- MODAL -->
+    <div class="modal fade" id="logoutModal">
 
-<!-- =====================================
-     MODAL CERRAR SESIÓN
-===================================== -->
+        <div class="modal-dialog modal-dialog-centered">
 
-<div class="modal fade"
-     id="logoutModal"
-     tabindex="-1">
+            <div class="modal-content border-0 shadow">
 
-    <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-header">
 
-        <div class="modal-content logout-modal">
+                    <h5 class="fw-bold">
 
-            <div class="modal-header border-0">
+                        Cerrar sesión
 
-                <h5 class="modal-title fw-bold">
-                    Cerrar sesión
-                </h5>
+                    </h5>
 
-            </div>
+                    <button class="btn-close"
+                            data-bs-dismiss="modal"></button>
 
-            <div class="modal-body">
+                </div>
 
-                ¿Está seguro que desea cerrar sesión?
+                <div class="modal-body">
 
-            </div>
+                    ¿Está seguro que desea finalizar su sesión actual?
 
-            <div class="modal-footer border-0">
+                </div>
 
-                <button
-                    type="button"
-                    class="btn btn-light"
-                    data-bs-dismiss="modal">
+                <div class="modal-footer border-0">
 
-                    Cancelar
+                    <button class="btn btn-light"
+                            data-bs-dismiss="modal">
 
-                </button>
+                        Cancelar
 
-                <a href="home.html"
-                   class="btn btn-danger">
+                    </button>
 
-                    Cerrar sesión
+                    <a href="home.html" class="btn btn-danger px-4">
 
-                </a>
+                        Salir
+
+                    </a>
+
+                </div>
 
             </div>
 
@@ -288,11 +310,9 @@
 
     </div>
 
-</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<script src="js/dashboard.js"></script>
+    <script src="js/dashboard.js"></script>
 
 </body>
 </html>
