@@ -222,3 +222,28 @@ document.addEventListener("change", (e) => {
     }
 
 });
+
+
+// ======================================
+// DESCARGAR PDF
+// ======================================
+
+const btnDescargarPdf =
+    document.getElementById("btnDescargarPdf");
+
+btnDescargarPdf.addEventListener("click", () => {
+
+    // ABRIR PDF EN NUEVA PESTAÑA
+    window.open(
+        "assets/pdf/declaracion.pdf",
+        "_blank"
+    );
+
+    // REDIRECCIÓN
+    setTimeout(() => {
+
+        window.location.href = "dashboard.html";
+
+    }, 1000);
+
+});

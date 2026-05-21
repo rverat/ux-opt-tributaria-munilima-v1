@@ -24,14 +24,16 @@
     <aside id="sidebar">
 
         <div class="sidebar-top">
+
             <img src="assets/logo.png"
-     class="logo"
-     id="logoSidebar">
+                 class="logo"
+                 id="logoSidebar">
+
         </div>
 
         <ul class="menu">
 
-            <li>
+            <li >
                 <a href="dashboard.html">
                     <i class="bi bi-house"></i>
                     <span>Inicio</span>
@@ -52,18 +54,25 @@
                 </a>
             </li>
 
-            <li>
-                <a href="#">
+            <li >
+                <a href="guia.html">
                     <i class="bi bi-question-circle"></i>
                     <span>Guía de usuario</span>
                 </a>
             </li>
 
             <li class="logout">
-                <a href="#">
+
+                <a href="#"
+                   data-bs-toggle="modal"
+                   data-bs-target="#logoutModal">
+
                     <i class="bi bi-box-arrow-right"></i>
+
                     <span>Cerrar sesión</span>
+
                 </a>
+
             </li>
 
         </ul>
@@ -163,9 +172,14 @@
                                     </td>
 
                                     <td>
-                                        <a href="#" class="pdf-link">
-                                            DJ0001.pdf
-                                        </a>
+                                        <a href="#"
+                                        class="pdf-link"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#pdfModal">
+
+                                        DJ0001.pdf
+
+</a>
                                     </td>
 
                                 </tr>
@@ -223,6 +237,101 @@
         </div>
 
     </main>
+
+</div>
+
+<!-- =====================================
+     MODAL VISOR PDF
+===================================== -->
+
+<div class="modal fade"
+     id="pdfModal"
+     tabindex="-1">
+
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+
+        <div class="modal-content pdf-modal-content">
+
+            <!-- HEADER -->
+            <div class="pdf-header">
+
+                <h5>
+                    Declaración Jurada
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <!-- BODY -->
+            <div class="modal-body p-0">
+
+                <embed
+                    src="assets/pdf/declaracion.pdf"
+                    type="application/pdf"
+                    class="pdf-frame">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =====================================
+     MODAL CERRAR SESIÓN
+===================================== -->
+
+<div class="modal fade"
+     id="logoutModal"
+     tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content logout-modal">
+
+            <div class="modal-header border-0">
+
+                <h5 class="modal-title fw-bold">
+                    Cerrar sesión
+                </h5>
+
+            </div>
+
+            <div class="modal-body">
+
+                ¿Está seguro que desea cerrar sesión?
+
+            </div>
+
+            <div class="modal-footer border-0">
+
+                <button
+                    type="button"
+                    class="btn btn-light"
+                    data-bs-dismiss="modal">
+
+                    Cancelar
+
+                </button>
+
+                <a href="home.html"
+                   class="btn btn-danger">
+
+                    Cerrar sesión
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 

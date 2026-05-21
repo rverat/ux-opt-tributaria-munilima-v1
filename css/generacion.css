@@ -233,6 +233,45 @@ body{
     cursor: not-allowed;
 }
 
+/* =========================================
+   MODAL PDF
+========================================= */
+
+.pdf-modal-content{
+    border-radius: 18px;
+    overflow: hidden;
+    border: none;
+}
+
+.pdf-header{
+    background: #0f3b75;
+    color: white;
+
+    padding: 16px 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pdf-header h5{
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.pdf-frame{
+    width: 100%;
+    height: 80vh;
+    display: block;
+}
+
+.modal-behind{
+    opacity: .3;
+}
+
+
+
 /* RESPONSIVE */
 
 @media(max-width:992px){

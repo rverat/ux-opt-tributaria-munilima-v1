@@ -20,52 +20,60 @@
     <aside id="sidebar">
 
         <div class="sidebar-top">
+
             <img src="assets/logo.png"
-     class="logo"
-     id="logoSidebar">
+                 class="logo"
+                 id="logoSidebar">
+
         </div>
 
         <ul class="menu">
 
-            <li>
+            <li >
                 <a href="dashboard.html">
                     <i class="bi bi-house"></i>
                     <span>Inicio</span>
                 </a>
             </li>
 
-            <li>
+            <li class="active">
                 <a href="generacion.html">
                     <i class="bi bi-pencil"></i>
                     <span>Realizar trámites y solicitudes</span>
                 </a>
             </li>
 
-            <li class="active">
+            <li >
                 <a href="consulta.html">
                     <i class="bi bi-search"></i>
                     <span>Consultar Estado de Solicitudes</span>
                 </a>
             </li>
 
-            <li>
-                <a href="#">
+            <li >
+                <a href="guia.html">
                     <i class="bi bi-question-circle"></i>
                     <span>Guía de usuario</span>
                 </a>
             </li>
 
             <li class="logout">
-                <a href="#">
+
+                <a href="#"
+                   data-bs-toggle="modal"
+                   data-bs-target="#logoutModal">
+
                     <i class="bi bi-box-arrow-right"></i>
+
                     <span>Cerrar sesión</span>
+
                 </a>
+
             </li>
 
         </ul>
 
     </aside>
-
     <!-- MAIN -->
     <main class="main-content">
 
@@ -243,10 +251,11 @@
 
             <!-- BOTONES -->
             <div class="acciones">
-
+<a href="dashboard.html">
                 <button class="btn btn-atras">
                     Atrás
                 </button>
+            </a>
 
                 <button class="btn btn-generar"
                         data-bs-toggle="modal"
@@ -263,7 +272,14 @@
 </div>
 
 <!-- MODAL -->
-<div class="modal fade" id="successModal">
+<!-- =====================================
+     MODAL ÉXITO
+===================================== -->
+
+<div class="modal fade"
+     id="successModal"
+     data-bs-backdrop="static"
+     data-bs-keyboard="false">
 
     <div class="modal-dialog modal-dialog-centered">
 
@@ -273,7 +289,9 @@
 
                 <i class="bi bi-check-circle-fill success-icon"></i>
 
-                <h3>Declaración generada exitosamente</h3>
+                <h3>
+                    Declaración generada exitosamente
+                </h3>
 
                 <p>
                     Tu declaración N° RE00254125 ha sido enviada correctamente.
@@ -281,12 +299,22 @@
 
                 <div class="d-flex justify-content-center gap-3 mt-4">
 
-                    <button class="btn btn-outline-primary">
-                        Volver al inicio
-                    </button>
+                    <!-- VOLVER -->
+                    <a href="dashboard.html"
+                       class="btn btn-outline-primary">
 
-                    <button class="btn btn-primary">
+                        Volver al inicio
+
+                    </a>
+
+                    <!-- DESCARGAR -->
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="btnDescargarPdf">
+
                         Descargar PDF
+
                     </button>
 
                 </div>
@@ -299,8 +327,65 @@
 
 </div>
 
+
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/generacion.js"></script>
+
+
+<!-- =====================================
+     MODAL CERRAR SESIÓN
+===================================== -->
+
+<div class="modal fade"
+     id="logoutModal"
+     tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content logout-modal">
+
+            <div class="modal-header border-0">
+
+                <h5 class="modal-title fw-bold">
+                    Cerrar sesión
+                </h5>
+
+            </div>
+
+            <div class="modal-body">
+
+                ¿Está seguro que desea cerrar sesión?
+
+            </div>
+
+            <div class="modal-footer border-0">
+
+                <button
+                    type="button"
+                    class="btn btn-light"
+                    data-bs-dismiss="modal">
+
+                    Cancelar
+
+                </button>
+
+                <a href="home.html"
+                   class="btn btn-danger">
+
+                    Cerrar sesión
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 </html>
