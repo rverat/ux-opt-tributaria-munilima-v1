@@ -33,6 +33,7 @@ body{
 #sidebar.hide .logo{
     width:45px;
 }
+
 /* SIDEBAR COLAPSADO */
 
 #sidebar.hide{
@@ -89,14 +90,12 @@ body{
     align-items:center;
     gap:12px;
     padding:14px 20px;
-    transition:0.2s;
 }
 
 .menu a:hover{
     background:#114b95;
 }
 
-.menu .active,
 .menu li.active{
     background:#114b95;
 }
@@ -132,8 +131,8 @@ body{
 
 .topbar-right{
     display:flex;
-    align-items:center;
     gap:25px;
+    align-items:center;
 }
 
 .top-item{
@@ -152,82 +151,44 @@ body{
 .titulo{
     font-size:40px;
     font-weight:bold;
-    margin-bottom:10px;
 }
 
 .subtitulo{
     color:#6c757d;
-    font-size:18px;
+    margin-top:10px;
+    margin-bottom:30px;
 }
 
-/* CARDS */
+/* TABLA */
 
-.info-card{
+.tabla-card{
     border:none;
-    padding:25px;
-    border-radius:10px;
+    border-top:4px solid #1e88e5;
     box-shadow:0 3px 10px rgba(0,0,0,0.08);
-    height:100%;
 }
 
-.numero{
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    background:#d7ecff;
-    color:#0d3d79;
-    font-size:22px;
+.tabla-title{
+    margin-bottom:25px;
     font-weight:bold;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:15px;
+    color:#0d3d79;
 }
 
-/* ALERTA */
-
-.alerta-info{
-    margin-top:50px;
+.tabla-resultados thead{
     background:#dff5ff;
-    padding:20px;
-    border-radius:10px;
-    display:flex;
-    align-items:center;
-    gap:15px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.08);
 }
 
-.alerta-info i{
-    font-size:30px;
+.tabla-resultados th{
     color:#0d3d79;
 }
 
-/* BOTONES */
-
-.acciones{
-    margin-top:50px;
-    display:flex;
-    justify-content:flex-end;
-}
-
-.btn-continuar{
-    background:#2f5fa9;
-    color:white;
-    padding:14px 40px;
+.pdf-link{
+    color:#0d6efd;
+    text-decoration:none;
     font-weight:bold;
-    border-radius:10px;
 }
 
-.btn-continuar:hover{
-    background:#244f8f;
-    color:white;
-}
-
-/* MODAL */
-
-.modal-custom{
-    border-radius:20px;
-    padding:10px;
+.pdf-link:hover{
+    text-decoration:underline;
 }
 
 /* RESPONSIVE */
