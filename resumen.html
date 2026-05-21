@@ -9,30 +9,72 @@
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
-<div class="wrapper">
-    <div class="main w-100">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card shadow">
-                        <div class="card-header bg-primary text-white text-center py-3">
-                            <h5 class="mb-0">Resumen de Declaración Jurada</h5>
-                        </div>
-                        <div class="card-body p-4">
-                            <div class="alert alert-warning">
-                                <i class="bi bi-exclamation-triangle-fill"></i> 
-                                Por favor, revise los datos antes de proceder con la generación oficial.
+    <nav id="sidebar">
+        <div class="logo-container">
+            <img src="assets/logo.png" class="logo">
+        </div>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="dashboard.html"><i class="bi bi-house"></i> Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="generacion.html"><i class="bi bi-pencil"></i> Realizar trámites y solicitudes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="busqueda.html"><i class="bi bi-search"></i> Búsqueda de Declaraciones</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="resumen.html"><i class="bi bi-file-earmark-medical"></i> Resumen de Trámite</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="imprimir.html"><i class="bi bi-printer"></i> Imprimir Declaración</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="bi bi-search"></i> Consultar Estado de Solicitudes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="bi bi-question-circle"></i> Guía de usuario</a>
+            </li>
+            <li class="nav-item mt-auto">
+                <a class="nav-link text-danger" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                    <i class="bi bi-box-arrow-right"></i> Cerrar sesión
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <header class="topbar">
+        <button class="btn text-white d-md-none" id="menuBtn">
+            <i class="bi bi-list"></i>
+        </button>
+        <div class="user-info text-uppercase">
+            ROL: CIUDADANO | <span id="fecha">20/05/2026</span> | GONZALES
+        </div>
+    </header>
+    <div class="wrapper">
+        <div class="main w-100">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card shadow">
+                            <div class="card-header bg-primary text-white text-center py-3">
+                                <h5 class="mb-0">Resumen de Declaración Jurada</h5>
                             </div>
-                            <ul class="list-group list-group-flush mb-4">
-                                <li class="list-group-item d-flex justify-content-between"><strong>Contribuyente:</strong> Victor Torres García</li>
-                                <li class="list-group-item d-flex justify-content-between"><strong>Tipo:</strong> Impuesto Predial (HR/PU)</li>
-                                <li class="list-group-item d-flex justify-content-between"><strong>Predio:</strong> Fundo Carapongo Lote 5</li>
-                                <li class="list-group-item d-flex justify-content-between"><strong>Periodo:</strong> 2024</li>
-                                <li class="list-group-item d-flex justify-content-between"><strong>Estado:</strong> Pendiente de Firma Digital</li>
-                            </ul>
-                            <div class="d-flex justify-content-between">
-                                <a href="busqueda.html" class="btn btn-outline-secondary">Modificar datos</a>
-                                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#confirmarModal">Confirmar y Generar</button>
+                            <div class="card-body p-4">
+                                <div class="alert alert-warning">
+                                    <i class="bi bi-exclamation-triangle-fill"></i>
+                                    Por favor, revise los datos antes de proceder con la generación oficial.
+                                </div>
+                                <ul class="list-group list-group-flush mb-4">
+                                    <li class="list-group-item d-flex justify-content-between"><strong>Contribuyente:</strong> Victor Torres García</li>
+                                    <li class="list-group-item d-flex justify-content-between"><strong>Tipo:</strong> Impuesto Predial (HR/PU)</li>
+                                    <li class="list-group-item d-flex justify-content-between"><strong>Predio:</strong> Fundo Carapongo Lote 5</li>
+                                    <li class="list-group-item d-flex justify-content-between"><strong>Periodo:</strong> 2024</li>
+                                    <li class="list-group-item d-flex justify-content-between"><strong>Estado:</strong> Pendiente de Firma Digital</li>
+                                </ul>
+                                <div class="d-flex justify-content-between">
+                                    <a href="busqueda.html" class="btn btn-outline-secondary">Modificar datos</a>
+                                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#confirmarModal">Confirmar y Generar</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -40,22 +82,21 @@
             </div>
         </div>
     </div>
-</div>
 
-<!-- MODAL DE CONFIRMACIÓN (Página 21 PDF) -->
-<div class="modal fade" id="confirmarModal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content text-center p-4">
-            <div class="text-warning mb-3"><i class="bi bi-exclamation-circle" style="font-size: 3rem;"></i></div>
-            <h4>Aviso</h4>
-            <p>¿Desea generar la declaración?</p>
-            <div class="d-flex justify-content-center gap-3 mt-3">
-                <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <a href="imprimir.html" class="btn btn-primary px-4">Aceptar</a>
+    <!-- MODAL DE CONFIRMACIÓN (Página 21 PDF) -->
+    <div class="modal fade" id="confirmarModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-4">
+                <div class="text-warning mb-3"><i class="bi bi-exclamation-circle" style="font-size: 3rem;"></i></div>
+                <h4>Aviso</h4>
+                <p>¿Desea generar la declaración?</p>
+                <div class="d-flex justify-content-center gap-3 mt-3">
+                    <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <a href="imprimir.html" class="btn btn-primary px-4">Aceptar</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
