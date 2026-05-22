@@ -331,20 +331,35 @@ body{
 @media(max-width:992px){
 
     #sidebar{
-        width:85px;
+        left:-270px;
+        width:270px !important;
     }
 
-    #sidebar .menu li a span{
-        display:none;
+    #sidebar.hide{
+        left:0;
+        width:270px !important;
+    }
+
+    #sidebar.hide .menu li a span{
+        display:flex;
+    }
+
+    #sidebar.hide .menu li a{
+        justify-content:flex-start;
     }
 
     .main-content{
-        margin-left:85px;
+        margin-left:0;
+    }
+
+    #sidebar.hide ~ .main-content{
+        margin-left:0;
     }
 
     .topbar-right{
         gap:10px;
         font-size:12px;
+        flex-wrap:wrap;
     }
 
 }
@@ -352,22 +367,38 @@ body{
 @media(max-width:768px){
 
     .contenido{
-        padding:20px;
+        padding:20px 15px;
     }
 
     .hero-guia{
-        padding:25px;
+        padding:25px 20px;
     }
 
     .hero-guia h1{
-        font-size:30px;
+        font-size:26px;
     }
 
     .topbar{
         flex-direction:column;
         height:auto;
-        padding:15px;
-        gap:10px;
+        padding:12px 15px;
+        gap:8px;
+        align-items:flex-start;
+    }
+
+    .topbar-right{
+        gap:8px;
+        font-size:11px;
+        flex-wrap:wrap;
+        width:100%;
+    }
+
+    .top-item{
+        font-size:11px;
+    }
+
+    .indice-links{
+        grid-template-columns:1fr;
     }
 
 }

@@ -2,10 +2,6 @@
 // SIDEBAR
 // ===============================
 
-// ===============================
-// SIDEBAR
-// ===============================
-
 const toggleBtn = document.getElementById("toggleBtn");
 
 const sidebar = document.getElementById("sidebar");

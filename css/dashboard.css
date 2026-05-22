@@ -248,3 +248,49 @@ body {
         padding-right: 15px;
     }
 }
+
+/* ======================================
+   RESPONSIVE — páginas internas
+   (busqueda, resumen, imprimir)
+====================================== */
+
+@media (max-width: 768px) {
+
+    /* Tabla de búsqueda */
+    .table-responsive {
+        font-size: 13px;
+    }
+
+    /* Botones de acción al final de página */
+    .d-flex.justify-content-end.gap-3 {
+        flex-direction: column;
+    }
+
+    .d-flex.justify-content-end.gap-3 .btn,
+    .d-flex.justify-content-end.gap-3 a.btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Card resumen */
+    .card.shadow .card-body {
+        padding: 20px 15px;
+    }
+
+    /* List-group items en resumen */
+    .list-group-item.d-flex {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    /* PDF preview en imprimir */
+    .pdf-preview {
+        padding: 15px;
+    }
+
+    .document-page {
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: 400px;
+    }
+}

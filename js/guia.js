@@ -35,15 +35,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     anchor.addEventListener("click", function (e) {
 
+        const href = this.getAttribute("href");
+
+        // Ignorar href="#" puro (ej. modal triggers)
+        if (!href || href === "#") return;
+
         e.preventDefault();
 
-        const destino = document.querySelector(
-            this.getAttribute("href")
-        );
+        const destino = document.querySelector(href);
 
-        destino.scrollIntoView({
-            behavior:"smooth"
-        });
+        if (destino) {
+            destino.scrollIntoView({ behavior: "smooth" });
+        }
 
     });
 
