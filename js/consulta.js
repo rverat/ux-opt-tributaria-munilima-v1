@@ -6,19 +6,67 @@ const sidebar = document.getElementById("sidebar");
 
 const logoSidebar = document.getElementById("logoSidebar");
 
-toggleBtn.addEventListener("click", () => {
+toggleBtn.addEventListener("click",()=>{
 
-    sidebar.classList.toggle("hide");
+    // MOBILE
 
-    // CAMBIAR LOGO
+    if(window.innerWidth < 992){
 
-    if(sidebar.classList.contains("hide")){
+        sidebar.classList.toggle("show");
 
-        logoSidebar.src = "assets/escudo.png";
+        document.body.classList.toggle("menu-open");
 
-    }else{
+    }
 
-        logoSidebar.src = "assets/logo.png";
+    // DESKTOP
+
+    else{
+
+        sidebar.classList.toggle("hide");
+
+        if(sidebar.classList.contains("hide")){
+
+            logoSidebar.src="assets/escudo.png";
+
+        }else{
+
+            logoSidebar.src="assets/logo.png";
+
+        }
+
+    }
+
+});
+
+
+// CLICK FUERA DEL MENU
+
+document.addEventListener("click",(e)=>{
+
+    if(
+        window.innerWidth < 992 &&
+        !sidebar.contains(e.target) &&
+        !toggleBtn.contains(e.target)
+    ){
+
+        sidebar.classList.remove("show");
+
+        document.body.classList.remove("menu-open");
+
+    }
+
+});
+
+
+// RESIZE
+
+window.addEventListener("resize",()=>{
+
+    if(window.innerWidth >= 992){
+
+        sidebar.classList.remove("show");
+
+        document.body.classList.remove("menu-open");
 
     }
 

@@ -1,47 +1,76 @@
-const fecha = new Date();
+// ======================================
+// SIDEBAR
+// ======================================
 
-document.getElementById("fecha").innerHTML = fecha.toLocaleString(
-    "es-PE",
-    {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-        hour: "2-digit",
-        minute: "2-digit"
-    }
-);
+const toggleBtn = document.getElementById("toggleBtn");
 
-const menuBtn = document.getElementById("menuBtn");
 const sidebar = document.getElementById("sidebar");
 
-menuBtn.addEventListener("click", () => {
+const logoSidebar = document.getElementById("logoSidebar");
 
-    sidebar.classList.toggle("show");
+toggleBtn.addEventListener("click",()=>{
 
-});
+    // MOBILE
 
-document.addEventListener("click", (e) => {
+    if(window.innerWidth < 992){
 
-    const isMobile = window.innerWidth < 992;
+        sidebar.classList.toggle("show");
 
-    if (
-        isMobile &&
-        !sidebar.contains(e.target) &&
-        !menuBtn.contains(e.target) &&
-        sidebar.classList.contains("show")
-    ) {
+        document.body.classList.toggle("menu-open");
 
-        sidebar.classList.remove("show");
+    }
+
+    // DESKTOP
+
+    else{
+
+        sidebar.classList.toggle("hide");
+
+        // CAMBIO LOGO
+
+        if(sidebar.classList.contains("hide")){
+
+            logoSidebar.src = "assets/escudo.png";
+
+        }else{
+
+            logoSidebar.src = "assets/logo.png";
+
+        }
 
     }
 
 });
 
-window.addEventListener("resize", () => {
 
-    if (window.innerWidth >= 992) {
+// CLICK FUERA DEL MENU
+
+document.addEventListener("click",(e)=>{
+
+    if(
+        window.innerWidth < 992 &&
+        !sidebar.contains(e.target) &&
+        !toggleBtn.contains(e.target)
+    ){
 
         sidebar.classList.remove("show");
+
+        document.body.classList.remove("menu-open");
+
+    }
+
+});
+
+
+// LIMPIAR EN RESIZE
+
+window.addEventListener("resize",()=>{
+
+    if(window.innerWidth >= 992){
+
+        sidebar.classList.remove("show");
+
+        document.body.classList.remove("menu-open");
 
     }
 

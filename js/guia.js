@@ -8,24 +8,67 @@ const sidebar = document.getElementById("sidebar");
 
 const logoSidebar = document.getElementById("logoSidebar");
 
-toggleBtn.addEventListener("click", () => {
+toggleBtn.addEventListener("click",()=>{
 
-    sidebar.classList.toggle("hide");
+    // MOBILE
 
-    // CAMBIO DE LOGO
+    if(window.innerWidth < 992){
 
-    if(sidebar.classList.contains("hide")){
+        sidebar.classList.toggle("show");
 
-        logoSidebar.src = "assets/escudo.png";
+    }
 
-    }else{
+    // DESKTOP
 
-        logoSidebar.src = "assets/logo.png";
+    else{
+
+        sidebar.classList.toggle("hide");
+
+        if(sidebar.classList.contains("hide")){
+
+            logoSidebar.src = "assets/escudo.png";
+
+        }else{
+
+            logoSidebar.src = "assets/logo.png";
+
+        }
 
     }
 
 });
 
+
+// CERRAR SIDEBAR MOBILE AL HACER CLICK FUERA
+
+document.addEventListener("click",(e)=>{
+
+    const mobile = window.innerWidth < 992;
+
+    if(
+        mobile &&
+        !sidebar.contains(e.target) &&
+        !toggleBtn.contains(e.target)
+    ){
+
+        sidebar.classList.remove("show");
+
+    }
+
+});
+
+
+// LIMPIAR AL VOLVER A DESKTOP
+
+window.addEventListener("resize",()=>{
+
+    if(window.innerWidth >= 992){
+
+        sidebar.classList.remove("show");
+
+    }
+
+});
 
 // ======================================
 // SCROLL SUAVE
@@ -35,18 +78,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     anchor.addEventListener("click", function (e) {
 
-        const href = this.getAttribute("href");
-
-        // Ignorar href="#" puro (ej. modal triggers)
-        if (!href || href === "#") return;
-
         e.preventDefault();
 
-        const destino = document.querySelector(href);
+        const destino = document.querySelector(
+            this.getAttribute("href")
+        );
 
-        if (destino) {
-            destino.scrollIntoView({ behavior: "smooth" });
-        }
+        destino.scrollIntoView({
+            behavior:"smooth"
+        });
 
     });
 

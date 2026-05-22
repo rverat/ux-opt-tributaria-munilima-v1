@@ -134,28 +134,3 @@ font-size:1.5rem;
 }
 
 }
-
-@media(max-width:480px){
-
-body{
-    overflow:auto;
-}
-
-.logo{
-    width:100px;
-}
-
-.title{
-    font-size:1.3rem;
-}
-
-.auth-card{
-    width:100%;
-    border-radius:10px;
-}
-
-.eye-icon{
-    top:40px;
-}
-
-}

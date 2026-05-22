@@ -77,25 +77,3 @@ body {
         font-size: 1.5rem;
     }
 }
-
-@media (max-width: 480px) {
-    body {
-        overflow: auto;
-    }
-    .logo {
-        width: 100px;
-    }
-    .title {
-        font-size: 1.3rem;
-    }
-    .container {
-        padding-left: 12px;
-        padding-right: 12px;
-    }
-    .login-card {
-        width: 100%;
-    }
-    .home-card {
-        width: 100%;
-    }
-}
